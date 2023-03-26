@@ -1,0 +1,11 @@
+name: Generation
+version: '1.0'
+main: dev.akex.generation.Generation
+api-version: 1.19
+load: STARTUP
+
+commands:
+  isvalid:
+  generate:
+  startblock:
+  fill:

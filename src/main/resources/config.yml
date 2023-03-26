@@ -1,0 +1,10 @@
+main_world: deep_dark
+portals:
+  last: -1
+  # Example
+  # 0 (portal id):
+  #   world: world name
+  #   blocks: [list of block coords]
+  -1:
+    world: world name
+    blocks: []
