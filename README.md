@@ -1,2 +1,2 @@
-# WardenBiome
-A plugin for enabling the warden biome
+# WardenDimension
+A plugin that adds a warden dimension
