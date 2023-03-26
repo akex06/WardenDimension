@@ -20,7 +20,7 @@ public class Portal {
     public Location maxLocation;
     public static int maxHeight = 17;
     public static int maxWidth = 23;
-    final public static Location defaultTeleportLocation = new Location(Bukkit.getServer().getWorld(Generation.config.getString("main_world")), 0, 40, 0);
+    final public static Location defaultTeleportLocation = new Location(Bukkit.getServer().getWorld(Config.getMainWorld()), 0, 40, 0);
     public static HashMap<Direction, Vector> directions = new HashMap<>() {{
         put(Direction.RIGHT, new Vector(1, 0, 0));
         put(Direction.LEFT, new Vector(-1, 0, 0));

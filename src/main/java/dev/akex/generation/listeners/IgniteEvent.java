@@ -1,6 +1,6 @@
 package dev.akex.generation.listeners;
 
-import dev.akex.generation.Generation;
+import dev.akex.generation.Config;
 import dev.akex.generation.Portal;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -15,7 +15,7 @@ public class IgniteEvent implements Listener {
         }
 
         Block block = event.getBlock();
-        if (!(block.getWorld().getName().equals("world") || block.getWorld().getName().equals(Generation.config.getString("main_world")))) {
+        if (!(block.getWorld().getName().equals("world") || block.getWorld().getName().equals(Config.getMainWorld()))) {
             return;
         }
 
