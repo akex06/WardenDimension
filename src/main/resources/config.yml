@@ -1,10 +1,19 @@
+# This is the name of the main world
 main_world: deep_dark
+worlds: []
+
+structures:
+  shouldgeneratestructures: true
+  # Type can be whitelist or blacklist
+  # whitelist will only generate the structures in the list
+  # blacklist will generate all structures except the ones in the list
+  # List of all structure types: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/generator/structure/Structure.html
+  type: whitelist
+  structures:
+    - ADD HERE THE STRUCTURE NAMES
 portals:
-  last: -1
   # Example
   # 0 (portal id):
   #   world: world name
   #   blocks: [list of block coords]
-  -1:
-    world: world name
-    blocks: []
+  last: -1

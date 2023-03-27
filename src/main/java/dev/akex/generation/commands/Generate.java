@@ -13,16 +13,18 @@ import org.bukkit.command.CommandSender;
 public class Generate implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length != 1) return false;
+        if (args.length != 1) {
+            return false;
+        }
 
         String worldName = args[0];
         if (Bukkit.getWorld(worldName) != null) {
             sender.sendMessage("World already exists");
-            return false;
+            return true;
         }
 
-        sender.sendMessage("Creating world '" + args[0] + "'");
-        Generator.createWorld(args[0]);
+        sender.sendMessage("Creating world '" + worldName + "'");
+        Generator.createWorld(worldName);
 
         sender.sendMessage("World created");
 

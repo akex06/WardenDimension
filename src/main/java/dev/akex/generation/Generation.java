@@ -4,9 +4,8 @@ import dev.akex.generation.biome.DeepDarkBiomeProvider;
 import dev.akex.generation.chunk.DeepDarkChunkGenerator;
 import dev.akex.generation.commands.Generate;
 import dev.akex.generation.listeners.IgniteEvent;
-import dev.akex.generation.listeners.PortalCreate;
-import dev.akex.generation.listeners.PortalRemove;
-import dev.akex.generation.listeners.PortalUse;
+import dev.akex.generation.listeners.PortalListener;
+import dev.akex.generation.listeners.StructureGeneration;
 import dev.akex.generation.utils.Generator;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -28,17 +27,15 @@ public final class Generation extends JavaPlugin {
     public void onEnable() {
         logger = getLogger();
         instance = this;
-        config = getConfig();
 
-        getConfig().options().copyDefaults();
         saveDefaultConfig();
+        config = getConfig();
 
         this.getCommand("generateworld").setExecutor(new Generate());
 
         getServer().getPluginManager().registerEvents(new IgniteEvent(), this);
-        getServer().getPluginManager().registerEvents(new PortalUse(), this);
-        getServer().getPluginManager().registerEvents(new PortalRemove(), this);
-        getServer().getPluginManager().registerEvents(new PortalCreate(), this);
+        getServer().getPluginManager().registerEvents(new PortalListener(), this);
+        getServer().getPluginManager().registerEvents(new StructureGeneration(), this);
 
         logger.log(Level.INFO, "Plugin enabled");
 
