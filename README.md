@@ -1,3 +1,5 @@
+# JAR AT /build/libs/
+
 # WardenDimension
 A plugin that adds a warden dimension
 
