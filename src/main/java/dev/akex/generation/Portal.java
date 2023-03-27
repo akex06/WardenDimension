@@ -44,15 +44,8 @@ public class Portal {
                 ", maxLocation=" + maxLocation +
                 '}';
     }
-    public static int getPortalID() {
-        // Returns which ID to use next
-        int newID = Generation.config.getInt("portals.last") + 1;
-        Generation.config.set("portals.last", newID);
-        return newID;
-    }
-
     public void fill() {
-        int portalID = getPortalID();
+        int portalID = Config.getNextPoralID();
         Generation.config.set("portals." + portalID + ".world", minLocation.getWorld().getName());
         ArrayList<String> blocks = new ArrayList<>();
 

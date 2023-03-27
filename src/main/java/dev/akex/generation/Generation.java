@@ -33,7 +33,7 @@ public final class Generation extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
-        this.getCommand("generate").setExecutor(new Generate());
+        this.getCommand("generateworld").setExecutor(new Generate());
 
         getServer().getPluginManager().registerEvents(new IgniteEvent(), this);
         getServer().getPluginManager().registerEvents(new PortalUse(), this);
@@ -42,8 +42,9 @@ public final class Generation extends JavaPlugin {
 
         logger.log(Level.INFO, "Plugin enabled");
 
+        // Will create the world when tasks are enabled (aka when you're able to create worlds)
         Bukkit.getScheduler().runTaskLater(this, () -> {
-            Generator.createWorld(getConfig().getString("main_world"));
+            Generator.createWorld(Config.getMainWorld());
         }, 1L);
     }
 
