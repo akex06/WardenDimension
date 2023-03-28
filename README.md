@@ -10,4 +10,4 @@ Just use a flint n steel and light up the portal. It's that simple.
 The plugin will take care of everything.
 
 # Commands
-/generate <world name> - This will generate a new warden dimension
+/generateworld <world name> - This will generate a new warden dimension
